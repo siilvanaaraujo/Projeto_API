@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Professores</title>
+</head>
+
+<body>
+  <h1>Lista de Professores</h1>
+  <ul>
+    {% for professor in professores %}
+      <li>
+        <a href="{{ url_for('professores.get_professor', id_professor=professor.id) }}">
+          <strong>Nome:</strong> {{ professor.nome }} <br>
+          <strong>ID:</strong> {{ professor.id }} <br>
+          <strong>Idade:</strong> {{ professor.idade }} <br>
+          <strong>Matéria:</strong> {{ professor.materia }} <br>
+          <strong>Observações:</strong> {{ professor.observacoes }}
+        </a>
+      </li>
+      <hr>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>

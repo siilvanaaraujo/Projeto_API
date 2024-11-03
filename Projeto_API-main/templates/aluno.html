@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Alunos</title>
+</head>
+
+<body>
+  <h1>Lista de Alunos</h1>
+  <ul>
+    {% for aluno in alunos %}
+      <li>
+        <a href="{{ url_for('alunos.get_aluno', id_aluno=aluno.id) }}">
+          <strong>Nome:</strong> {{ aluno.nome }} <br>
+          <strong>ID:</strong> {{ aluno.id }} <br>
+          <strong>Idade:</strong> {{ aluno.idade }} <br>
+          <strong>Data de Nascimento:</strong> {{ aluno.data_nascimento }} <br>
+          <strong>Turma ID:</strong> {{ aluno.turma_id }} <br>
+          <strong>Nota Primeiro Semestre:</strong> {{ aluno.nota_primeiro_semestre }} <br>
+          <strong>Nota Segundo Semestre:</strong> {{ aluno.nota_segundo_semestre }} <br>
+          <strong>Média Final:</strong> {{ aluno.media_final }}
+        </a>
+      </li>
+      <hr>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
